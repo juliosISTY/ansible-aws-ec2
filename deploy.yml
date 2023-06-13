@@ -1,7 +1,7 @@
 ---
 - name: "Deploy EC2 instance on AWS"
   hosts: localhost
-  become: true
+  #become: true
   vars:
     ansible_connection: local
   pre_tasks:
@@ -34,7 +34,7 @@
             cidr_ip: 0.0.0.0/0
 
     - name: Deploy Production Server
-      ec2:
+      ec2_instance:
         group: "{{ security_group_name }}"
         key_name: "{{ key_name }}"
         instance_type: "{{ instance_type }}"

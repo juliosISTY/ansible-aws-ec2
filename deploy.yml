@@ -16,7 +16,7 @@
   tasks:
     # tasks file for deploy-infra
     - name: Create a security group for server
-      amazon.aws.ec2_security_group:
+      ec2_group:
         name: "{{ security_group_name }}"
         description: "{{ security_group_name }}"
         region: "{{ region }}"
@@ -34,11 +34,11 @@
             cidr_ip: 0.0.0.0/0
 
     - name: Deploy Production Server
-      amazon.aws.ec2_instance:
-        group_name: "{{ security_group_name }}"
+      ec2:
+        group: "{{ security_group_name }}"
         key_name: "{{ key_name }}"
         instance_type: "{{ instance_type }}"
-        image_id: "{{ ami_ubuntu }}"
+        image: "{{ ami_ubuntu }}"
         wait: yes
         wait_timeout: 600
         volumes:

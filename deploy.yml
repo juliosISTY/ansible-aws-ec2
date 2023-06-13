@@ -41,11 +41,11 @@
         image_id: "{{ ami_ubuntu }}"
         wait: yes
         wait_timeout: 600
-        volumes:
-          - device_name: /dev/sda1
-            ebs:
-              volume_size: 20
-              delete_on_termination: yes
+        #volumes:
+        #  - device_name: /dev/sda1
+        #    ebs:
+        #      volume_size: 20
+        #      delete_on_termination: yes
         #count: 1
         vpc_subnet_id: "{{ subnet }}"
         network:

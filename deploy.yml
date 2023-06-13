@@ -56,6 +56,12 @@
         instance_ids: "{{ id_token }}"
       register: ec2
 
+    - name: associate new elastic IPs with each of the instances
+      ec2_eip:
+        region: "{{ region }}"
+        device_id: "{{ item }}"
+      loop: "{{ ec2.instance_ids }}"
+  
     - name: Get public IP adress of production server
       ec2_eip_info:
         region: "{{ region }}"

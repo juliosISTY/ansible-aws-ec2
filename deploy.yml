@@ -57,8 +57,9 @@
       register: ec2
 
     - name: Get public IP adress of production server
-      set_fact: public_ip="{{ item.public_ip }}"
-      loop: "{{ ec2.instances }}"
+      ec2_eip_info:
+        filters:
+          instance-id: "{{ id_token }}"
       register: public_ip
 
     - name: Add the newly created host {{ public_ip }} to ec2 group

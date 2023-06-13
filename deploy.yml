@@ -38,7 +38,7 @@
         group: "{{ security_group_name }}"
         key_name: "{{ key_name }}"
         instance_type: "{{ instance_type }}"
-        image: "{{ ami_ubuntu }}"
+        image_id: "{{ ami_ubuntu }}"
         wait: yes
         wait_timeout: 600
         volumes:

@@ -43,7 +43,7 @@
         wait_timeout: 600
         volumes:
           - device_name: /dev/sda1
-            gp2:
+            ebs:
               volume_size: 20
               delete_on_termination: yes
         #count: 1

@@ -58,6 +58,7 @@
 
     - name: Get public IP adress of production server
       ec2_eip_info:
+        region: "{{ region }}"
         filters:
           instance-id: "{{ id_token }}"
       register: public_ip

@@ -1,7 +1,7 @@
 #ec2 information
 instance_type: t2.medium
 security_group_name: "devops-sg"
-id_token: "550e8400-e29b-41d4-a716-446655440079"
+id_token: ["550e8400-e29b-41d4-a716-446655440079"]
 host_group_name: "server"
 ami_ubuntu: "ami-0261755bbcb8c4a84"
 key_name: "devops"
